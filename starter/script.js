@@ -1,8 +1,21 @@
 'use strict';
-const btnShowModal = document.querySelectorAll('.show-modal');
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const showModal = document.querySelectorAll('.show-modal');
+const closeModal = document.querySelector('.close-modal');
 
-for (let i = 0; i < btnShowModal.length; i++) {
-  btnShowModal[i].addEventListener('click', function () {
-    console.log('hello');
+for (let i = 0; i < showModal.length; i++) {
+  showModal[i].addEventListener('click', function () {
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+  });
+
+  closeModal.addEventListener('click', function () {
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+  });
+  overlay.addEventListener('click', function () {
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
   });
 }
